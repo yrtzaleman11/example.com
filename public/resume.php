@@ -13,7 +13,7 @@
     <meta name="description" content="Yaritza Aleman Resume">
     <meta name="keywords" content="receptionist,customer service,Scrum Master,Spanish,English">  
     </head>
-    <body style="background-color: #BC8F8F"> 
+    <body style="background-color: #696969"> 
 
 <header>
     <span class="logo">Yaritza Aleman 
@@ -23,7 +23,7 @@
       <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="resume.html">Resume</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.php">Contact</a></li>
       </ul>
   </nav>
 </header>
