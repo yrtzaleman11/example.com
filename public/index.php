@@ -14,7 +14,7 @@
   <meta name="description" content="Yaritza Aleman Resume">
   <meta name="keywords" content="receptionist,customer service,Scrum Master,Spanish,English">  
 </head>
-<body style="background-color: #2F4F4F"> 
+<body style="background-color: #FFB6C1"> 
 
   <header>
     <span class="logo>Yaritza Aleman"</span>
