@@ -2,8 +2,10 @@
 require '../../core/functions.php';
 require '../../config/keys.php';
 require '../../core/db_connect.php';
+require '../../core/session.php';
+checkSession();
 
-// Get the user
+// Get the user 
 $get = filter_input_array(INPUT_GET);
 $id = $get['id'];
 
@@ -22,14 +24,14 @@ if(empty($row)){
 $meta=[];
 $meta['title']= "Edit: {$row['first_name']} {$row['last_name']}";
 
-// Update the post
+// Update the user
 $message=null;
 
 $args = [
     'id'=>FILTER_SANITIZE_STRING, //strips HMTL
     'first_name'=>FILTER_SANITIZE_STRING, //strips HMTL
     'last_name'=>FILTER_SANITIZE_STRING, //strips HMTL
-    'email'=>FILTER_SANITIZE_STRING, //strips HMTL    
+    'email'=>FILTER_SANITIZE_EMAIL, //strips HMTL
 ];
 
 $input = filter_input_array(INPUT_POST, $args);
@@ -39,26 +41,22 @@ if(!empty($input)){
     //Strip white space, begining and end
     $input = array_map('trim', $input);
 
-    // //Allow only whitelisted HTML
-    // $input['body'] = cleanHTML($input['body']);
-
-    // //Create the id
+    //Create the id
     // $id = id($input['first_name']);
 
     //Sanitized insert
     $sql = 'UPDATE
         users
       SET
-        -- //id=:id,
-        first_name=:first_name,                
+        first_name=:first_name,
         last_name=:last_name,
         email=:email
       WHERE
         id=:id';
 
     if($pdo->prepare($sql)->execute([
-        // 'id'=>$id,  
-        'first_name'=>$input['first_name'],   
+        // 'id'=>$id,
+        'first_name'=>$input['first_name'],
         'last_name'=>$input['last_name'],
         'email'=>$input['email'],
         'id'=>$input['id']
@@ -70,7 +68,7 @@ if(!empty($input)){
 }
 
 $content = <<<EOT
-<h1>Edit: {$row['first_name']}</h1>
+<h1>Edit: {$row['first_name']}  {$row['last_name']}</h1>
 {$message}
 <form method="post">
 <input id="id" name="id" value="{$row['id']}" type="hidden">
@@ -84,7 +82,7 @@ $content = <<<EOT
         <textarea id="last_name" name="last_name" rows="2"
           class="form-control"
           >{$row['last_name']}</textarea>
-    </div>    
+    </div>
     <div class="form-group col-md-6">
         <label for="email">Email</label>
         <textarea id="email" name="email" rows="2"

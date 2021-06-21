@@ -2,13 +2,8 @@
 
 require '../core/processContactForm.php';
 
-//Build the page metadata
-$meta = [];
-$meta['description'] = "Contact Yaritza Web development";
-$meta['keywords'] = "Contact, Yaritza, Web Development";
 $content = <<<EOT
 <form action="contact.php" method="POST">
-    {$message}
     <input type="hidden" name="subject" value="New submission!">
   
   <div class="form-control">
@@ -47,4 +42,3 @@ $content = <<<EOT
 EOT;
 
 include '../core/layout.php';
-
