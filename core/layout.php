@@ -65,23 +65,26 @@ function active($name){
           <li class="nav-item">
             <a class="nav-link" href="http://localhost/example.com/public/contact.php">Contact</a>
           </li>
-            <a class="nav-link dropdown-toggle" href="http://localhost/example.com/public/register.php" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Register
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost/example.com/public/register.php">Register</a>
+          </li>
               <li class="nav-item">
-            <a class="nav-link" href="http://localhost/example.com/public/posts/">Contact</a>
+            <a class="nav-link" href="http://localhost/example.com/public/posts/">Post</a>
+          </li> 
+            
             <li class="nav-item">
-            <a class="nav-link" href="http://localhost/example.com/public/contact.php">Contact</a>
-            <li class="nav-item">
-            <a class="nav-link" href="http://localhost/example.com/public/contact.php">Contact</a>
-            <li class="nav-item">
-            <a class="nav-link" href="http://localhost/example.com/public/contact.php">Contact</a>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="http://localhost/example.com/public/posts/">Post</a>
-              <a class="dropdown-item" href="http://localhost/example.com/public/users/index.php">Users</a>
-           <a class="dropdown-item" href="http://localhost/example.com/public/logout.php">Logout</a>
-           <a class="dropdown-item" href="http://localhost/example.com/public/login.php">Login</a>
-            </div>
+            <a class="nav-link" href="http://localhost/example.com/public/users/index.php">Users</a>
+          </li>
+          
+           <li class="nav-item">
+            <a class="nav-link" href="http://localhost/example.com/public/login.php">Login</a>
+          </li> 
+          
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost/example.com/public/logout.php">Logout</a>
+          </li>
+          </a>
+
 
         
         <div id="Footer" class="clearfix">

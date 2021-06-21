@@ -3,6 +3,11 @@ require '../core/session.php';
 require '../core/db_connect.php';
 require '../core/About/src/Validation/Validate.php';
 
+//Build the page metadata
+$meta = [];
+$meta['description'] = "Register Yaritza A's For Access";
+$meta['keywords'] = "register, Yaritza, A., access";
+
 use About\Validation;
 
 $valid = new About\Validation\Validate();
